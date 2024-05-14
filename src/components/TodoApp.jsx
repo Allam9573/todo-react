@@ -45,8 +45,8 @@ const TodoApp = () => {
                                 todos.map(item => {
                                     return (
                                         <div className="todo-item" key={item.id}>
-                                            <p>{item.title}</p>
-                                            <div>
+                                            <p className="todo-title">{item.title}</p>
+                                            <div className="btn-container">
                                                 <button className="btn-editar">Editar</button>
                                                 <button onClick={() => eliminarTask(item.title)} className="btn-eliminar">Eliminar</button>
                                             </div>

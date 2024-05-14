@@ -45,7 +45,7 @@
   margin: 20px auto;
 }
 
-.todo-item{
+.todo-item {
   border: 1px solid gray;
   width: 70%;
   display: flex;
@@ -57,22 +57,25 @@
   border-radius: 5px;
   margin: 10px 0;
 }
-.btn-editar{
+
+.btn-editar {
   padding: 10px 20px;
   background-color: teal;
-  color:#fff;
+  color: #fff;
   border: 1px solid teal;
   border-radius: 5px;
   margin: 0 10px;
 }
-.btn-eliminar{
+
+.btn-eliminar {
   padding: 10px 20px;
   background-color: rgb(173, 2, 2);
-  color:#fff;
+  color: #fff;
   border: 1px solid rgb(173, 2, 2);
   border-radius: 5px;
   margin-right: 10px;
 }
+
 .btn-create {
   padding: 10px;
   width: 20%;
@@ -84,19 +87,53 @@
   border-radius: 0 5px 5px 0;
 }
 
-.todo-list{
+.todo-list {
   width: 70%;
 }
 
-@media(max-width: 920px) {
+@media(max-width: 360px) {
   .form-todo {
     flex-direction: column;
     align-items: center;
   }
 
+  .todo-input {
+    border-radius: 5px;
+    width: 100%;
+  }
+
   .btn-create {
     border-radius: 5px;
-    width: 50%;
+    width: 100%;
     margin: 10px auto;
+  }
+
+  .btn-editar,
+  .btn-eliminar {
+    margin-top: 20px;
+    width: 50%;
+    padding: 5px 10px;
+  }
+
+  .todo-container {
+    width: 90%;
+  }
+
+  .todo-item {
+    width: 100%;
+    flex-direction: column;
+
+  }
+
+  .todo-title {
+    width: 100%;
+    flex-wrap: nowrap;
+    color: rgb(65, 65, 65);
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+  .btn-container {
+    display: flex;
   }
 }
