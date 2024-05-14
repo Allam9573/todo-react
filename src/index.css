@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 5px;
+  width: 70%;
+  margin: 30px auto;
+  align-items: center;
+  padding: 20px 10px;
+  box-shadow: 0 5px 5px 0 rgb(194, 194, 194);
+}
+
+.form-todo {
+  width: 70%;
+  text-align: center;
+  display: flex;
+}
+
+.todo-input {
+  outline: none;
+  padding: 10px;
+  width: 80%;
+  border-radius: 5px 0 0 5px;
+  border: 2px solid rgb(0, 132, 255);
+  font-size: 20px;
+  color: rgb(0, 132, 255);
+  transition: 0.5s;
+}
+
+.todo-input:focus {
+  box-shadow: 0 5px 5px 0 rgb(194, 194, 194);
+  transition: 0.5s;
+}
+
+.subtitle {
+  color: rgb(0, 100, 194);
+  font-size: 30px;
+  margin: 20px auto;
+}
+
+.todo-item{
+  border: 1px solid gray;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border: 1px solid rgb(216, 216, 216);
+  box-shadow: 0 3px 3px 0 rgb(224, 224, 224);
+  border-radius: 5px;
+  margin: 10px 0;
+}
+.btn-editar{
+  padding: 10px 20px;
+  background-color: teal;
+  color:#fff;
+  border: 1px solid teal;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+.btn-eliminar{
+  padding: 10px 20px;
+  background-color: rgb(173, 2, 2);
+  color:#fff;
+  border: 1px solid rgb(173, 2, 2);
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.btn-create {
+  padding: 10px;
+  width: 20%;
+  outline: none;
+  border: 1px solid rgb(0, 132, 255);
+  background-color: rgb(0, 132, 255);
+  color: #fff;
+  font-size: 20px;
+  border-radius: 0 5px 5px 0;
+}
+
+.todo-list{
+  width: 70%;
+}
+
+@media(max-width: 920px) {
+  .form-todo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-create {
+    border-radius: 5px;
+    width: 50%;
+    margin: 10px auto;
+  }
+}
