@@ -87,7 +87,20 @@
   font-size: 20px;
   border-radius: 0 5px 5px 0;
 }
-
+.search{
+  outline: none;
+  width: 30%;
+  padding: 10px 20px;
+  font-size: 15px;
+  border: 2px solid rgb(0, 95, 184);
+  color: rgb(0, 95, 184);
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.empty-results{
+  color: rgb(87, 87, 87);
+  font-size: 30px;
+}
 .todo-list {
   width: 70%;
 }
@@ -136,5 +149,8 @@
 
   .btn-container {
     display: flex;
+  }
+  .search{
+    width: 90%;
   }
 }

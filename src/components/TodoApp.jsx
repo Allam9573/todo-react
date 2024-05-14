@@ -6,6 +6,7 @@ const TodoApp = () => {
 
     const [todo, setTodo] = useState('')
     const [todos, setTodos] = useState([])
+    const [searchText, setSearchText] = useState('')
 
     const eliminarTask = (title) => {
         setTodos(todos.filter(item => item.title !== title))
@@ -28,6 +29,9 @@ const TodoApp = () => {
             }
         }
     }
+    const results = todos.filter(item => {
+        return item.title.toLowerCase().includes(searchText.toLowerCase())
+    })
     return (
         <>
             <div className="todo-container">
@@ -41,18 +45,21 @@ const TodoApp = () => {
                         <h3 className="subtitle">No hay tareas pendientes</h3> :
                         <>
                             <h3 className="subtitle">Listado de tareas</h3>
+                            <input type="search" placeholder="Buscar tarea..." value={searchText} onChange={e => setSearchText(e.target.value)} className="search" id="" />
                             {
-                                todos.map(item => {
-                                    return (
-                                        <div className="todo-item" key={item.id}>
-                                            <p className="todo-title">{item.title}</p>
-                                            <div className="btn-container">
-                                                <button className="btn-editar">Editar</button>
-                                                <button onClick={() => eliminarTask(item.title)} className="btn-eliminar">Eliminar</button>
+                                results.length === 0 ?
+                                    <h3 className="empty-results">No hay resultados</h3> :
+                                    results.map(item => {
+                                        return (
+                                            <div className="todo-item" key={item.id}>
+                                                <p className="todo-title">{item.title}</p>
+                                                <div className="btn-container">
+                                                    <button className="btn-editar">Editar</button>
+                                                    <button onClick={() => eliminarTask(item.title)} className="btn-eliminar">Eliminar</button>
+                                                </div>
                                             </div>
-                                        </div>
-                                    )
-                                })
+                                        )
+                                    })
                             }
                         </>
                 }
