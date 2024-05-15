@@ -1,14 +1,22 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import '../index.css'
 import { Todo } from "./Todo"
 
 
 const TodoApp = () => {
 
+    const initialTodoList = () => {
+        const localStorageTodos = localStorage.getItem('todoList')
+        return localStorageTodos ? JSON.parse(localStorageTodos) : []
+    }
+
     const [todo, setTodo] = useState('')
-    const [todos, setTodos] = useState([])
+    const [todos, setTodos] = useState(initialTodoList)
     const [searchText, setSearchText] = useState('')
-    const [isEdit, setIsEdit] = useState(false)
+
+    useEffect(() => {
+        localStorage.setItem('todoList', JSON.stringify(todos))
+    }, [todos])
 
     const updateTodo = (id, newTitle) => {
         const updateTodos = [...todos]
@@ -38,12 +46,14 @@ const TodoApp = () => {
                     title: todo
                 }])
                 setTodo('')
+
             }
         }
     }
     const results = todos.filter(item => {
         return item.title.toLowerCase().includes(searchText.toLowerCase())
     })
+
     return (
         <>
             <div className="todo-container">
