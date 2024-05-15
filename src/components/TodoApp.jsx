@@ -1,5 +1,6 @@
 import { useState } from "react"
 import '../index.css'
+import { Todo } from "./Todo"
 
 
 const TodoApp = () => {
@@ -7,7 +8,14 @@ const TodoApp = () => {
     const [todo, setTodo] = useState('')
     const [todos, setTodos] = useState([])
     const [searchText, setSearchText] = useState('')
+    const [isEdit, setIsEdit] = useState(false)
 
+    const updateTodo = (id, newTitle) => {
+        const updateTodos = [...todos]
+        const index = updateTodos.findIndex(item => item.id === id)
+        updateTodos[index].title = newTitle
+        setTodos(updateTodos)
+    }
     const eliminarTask = (title) => {
         setTodos(todos.filter(item => item.title !== title))
     }
@@ -51,13 +59,16 @@ const TodoApp = () => {
                                     <h3 className="empty-results">No hay resultados</h3> :
                                     results.map(item => {
                                         return (
+
                                             <div className="todo-item" key={item.id}>
-                                                <p className="todo-title">{item.title}</p>
-                                                <div className="btn-container">
-                                                    <button className="btn-editar">Editar</button>
-                                                    <button onClick={() => eliminarTask(item.title)} className="btn-eliminar">Eliminar</button>
-                                                </div>
+                                                <Todo
+                                                    item={item}
+                                                    eliminarTask={eliminarTask}
+                                                    updateTodo={updateTodo}
+                                                />
                                             </div>
+
+
                                         )
                                     })
                             }

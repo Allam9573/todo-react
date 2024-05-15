@@ -39,6 +39,33 @@
   transition: 0.5s;
 }
 
+.form-edit {
+  width: 100%;
+  text-align: center;
+}
+
+.input-edit {
+  padding: 10px 20px;
+  border: 2px solid rgb(0, 0, 134);
+  width: 70%;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.btn-edit {
+  padding: 10px 20px;
+  background-color: rgb(0, 0, 134);
+  color: #fff;
+  border: 2px solid rgb(0, 0, 134);
+  border-radius: 0 5px 5px 0;
+  transition: 0.5s;
+}
+
+.btn-edit:hover {
+  transition: 0.5s;
+  box-shadow: 0 5px 5px 0 rgb(105, 105, 105);
+}
+
 .subtitle {
   color: rgb(0, 100, 194);
   font-size: 30px;
@@ -87,7 +114,8 @@
   font-size: 20px;
   border-radius: 0 5px 5px 0;
 }
-.search{
+
+.search {
   outline: none;
   width: 30%;
   padding: 10px 20px;
@@ -97,10 +125,12 @@
   border-radius: 5px;
   margin-bottom: 10px;
 }
-.empty-results{
+
+.empty-results {
   color: rgb(87, 87, 87);
   font-size: 30px;
 }
+
 .todo-list {
   width: 70%;
 }
@@ -150,7 +180,19 @@
   .btn-container {
     display: flex;
   }
-  .search{
+
+  .search {
     width: 90%;
+  }
+
+  .input-edit {
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  .btn-edit {
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
   }
 }
