@@ -17,7 +17,11 @@ const TodoApp = () => {
         setTodos(updateTodos)
     }
     const eliminarTask = (title) => {
-        setTodos(todos.filter(item => item.title !== title))
+        const confirmDelete = window.confirm(`¿Estás seguro de que quieres eliminar la tarea "${title}"?`);
+        if (confirmDelete) {
+            const newTodos = [...todos]
+            setTodos(todos.filter(item => item.title !== title))
+        }
     }
 
     const onSubmit = (e) => {
